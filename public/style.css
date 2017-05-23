@@ -1,0 +1,314 @@
+body{
+	margin: 0
+}
+
+.ball {
+	display: inline-block;
+	height: 70px;
+	width: 70px;
+	border: #92d5ed 5px solid;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0;
+	animation: rollin 4s ease-in infinite;
+}
+.ball:before{
+	content: '';
+	background: #d8b7e8;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin: 14px;
+	animation: swirlin 4s ease-in infinite;
+}
+@keyframes rollin{
+	0% {
+		left: 0;
+	}
+	30%{
+		left: 30%;
+	}
+	40%{
+		left: 20%;
+	}
+	60%{
+		left:30%;
+	}
+	100%{
+		left: 0;
+	}
+
+}
+@keyframes swirlin{
+	0% {
+		transform: rotate(0deg);
+	}
+	30%{
+		transform: rotate(720deg);
+	}
+	40%{
+		transform: rotate(360deg);
+	}
+	60%{
+		transform: rotate(890deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
+
+/* ----------------item--------------------- */
+
+.item.short figure{
+	max-width: 400px;
+	display: inline-block;
+}
+.item figure{
+	max-width: 800px;
+	max-width: 80vw;
+	display: inline-block;
+}
+.item figure img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* ---------------/item--------------------- */
+/* ----------------nav--------------------- */
+nav {
+  height: 40px;
+  position: relative;
+}
+nav.burgerable {
+  margin: 0 -30px;
+}
+nav > ul {
+  display: inline-block;
+}
+nav.burgerable > ul {
+  display: inline-block;
+  width: 100%;
+}
+/*.nav.nav-pills > li:first-child a {
+  margin-left: 0.5em;
+  background: white;
+  position: relative;
+  display: inline-block;
+  transition: 0.4s ease-in-out;
+  opacity: 1;
+}*/
+.nav.nav-pills > li:first-child a:before {
+  background: white;
+  content: '';
+  height: 100%;
+  width: 2em;
+  display: inline-block;
+  position: absolute;
+  left: -0.5em;
+  z-index: -1;
+  top: 0;
+}
+.nav.nav-pills > li:first-child a:before {
+  transition: 0.4s ease-in-out;
+}
+.nav.nav-pills > li:first-child a:hover,
+.nav.nav-pills > li.active:first-child a {
+  margin-left: 0.5em;
+  background: black;
+  position: relative;
+  display: inline-block;
+  opacity: 0.7;
+}
+.nav.nav-pills > li:first-child a:hover:before,
+.nav.nav-pills > li.active:first-child a:before {
+  background: black;
+  content: '';
+  height: 100%;
+  width: 2em;
+  display: inline-block;
+  position: absolute;
+  left: -0.5em;
+  z-index: -1;
+  top: 0;
+}
+.nav.sub-nav ul {
+  width: auto;
+  white-space: nowrap;
+  margin-left: -2.4em;
+}
+.nav li a {
+  color: black;
+  background-color: white;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 0;
+  font-size: 14px;
+  transition: 0.4s ease-in-out;
+}
+.nav.nav-pills > li > a {
+}
+.nav li.active > a {
+  background: black;
+  opacity: 1;
+  color: white;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.nav li a:hover {
+  background: #5a5a5a;
+  opacity: .9;
+  color: white;
+}
+.schatten {
+  -webkit-box-shadow: 0px 15px 15px 0px rgba(100, 100, 100, 0.15);
+  -moz-box-shadow: 0px 15px 15px 0px rgba(100, 100, 100, 0.15);
+  box-shadow: 0px 15px 15px 0px rgba(100, 100, 100, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+/* ----------------Sub-nav ----------------*/
+li > ul.nav {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  width: auto;
+  width: max-content;
+  transform: translateY(-4em);
+  z-index: -1;
+  transition: 0.6s all, 0.1s z-index, 0.001s visibility, 1s max-height;
+  transition-delay: 0.1s, 0.2s, 0.3s, 0.1s;
+}
+li > ul.nav a:hover {
+  background: #4d4d4d;
+}
+.nav li:hover > ul {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+  z-index: 2;
+  transition-delay: 0.1s, 0.1s, 0.2s, 0.3s;
+}
+.burgerable .nav li > ul {
+  position: relative;
+  width: 100%;
+  padding-left: 2em;
+  max-height: 0;
+}
+.burgerable .nav li:hover > ul {
+  max-height: 90vh;
+}
+/* ---------------/Sub-nav -----------------*/
+/* ----------------nav-burger --------------*/
+/* ----------------burger-trans --------------*/
+.burgerable > ul {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s all, 0.1s z-index, 0.01s visibility;
+  transition-delay: 0s, 0.01s, 0.3s;
+  z-index: -1;
+  width: 80%;
+  transform: translateY(-2em);
+  background: white;
+}
+.burgerable > ul li > ul.nav {
+  transform: translateY(-2em);
+}
+.burgerable > ul li:hover > ul {
+  transform: translate(0);
+}
+.burgerable.open > ul {
+  transform: translateY(40px);
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0.1s, 0.01s, 0.2s;
+}
+/* ---------------/burger-trans --------------*/
+i.nav-burger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url(../bilder/quadroLink.svg);
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+nav.burgerable > ul > li > a {
+  margin-left: 0.5em;
+  background: white;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  opacity: 1;
+  display: inline-block;
+  width: 80%;
+}
+nav.burgerable > ul > li > a:before {
+  background: white;
+  content: '';
+  height: 100%;
+  width: 2em;
+  display: inline-block;
+  position: absolute;
+  left: -0.5em;
+  z-index: -1;
+  top: 0;
+}
+nav.burgerable > ul > li > a:before {
+  transition: 0.4s ease-in-out;
+}
+nav.burgerable > ul > li > a:hover,
+nav.burgerable > ul > li.active > a {
+  margin-left: 0.5em;
+  background: black;
+  position: relative;
+  display: inline-block;
+  opacity: 0.7;
+}
+nav.burgerable > ul > li > a:hover:before,
+nav.burgerable > ul > li.active > a:before {
+  background: black;
+  content: '';
+  height: 100%;
+  width: 2em;
+  display: inline-block;
+  position: absolute;
+  left: -0.5em;
+  z-index: -1;
+  top: 0;
+}
+nav.burgerable > .menu-text {
+  color: black;
+  background-color: white;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 0;
+  font-size: 14px;
+  text-transform: lowercase;
+  transition: 0.4s ease-in-out;
+  padding: 10px 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+}
+nav.burgerable > li.menu-text {
+  visibility: hidden;
+}
+nav.burgerable > li.menu-text {
+  visibility: visible;
+}
+nav.burgerable ul > li {
+  display: block;
+}
+nav.burgerable > i.nav-burger {
+  display: block;
+}
+nav > i.nav-burger {
+  display: none;
+}
+nav > .menu-text {
+  display: none;
+}
+/* ---------------/nav-burger--------------*/
+/* ----------------/nav--------------------- */

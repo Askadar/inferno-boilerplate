@@ -1,0 +1,21 @@
+[
+	{"id":1,"name":"Filpon 1","category":1,"imgFolder":"/assets/filpo1/","imgCount":3,"price":"11.54","manufacturer":"Zapunko"},
+	{"id":2,"name":"Filpon 2","category":1,"imgFolder":"/assets/filpo2/","imgCount":3,"price":"12.35","manufacturer":"Dilto"},
+	{
+		"id":6,
+		"name":"Filpon 2",
+		"category":1,
+		"imgFolder":"/assets/filpo2/",
+		"imgCount":3,
+		"price":"28.43",
+		"manufacturer":"Dilto"},
+	{"id":3,"name":"Laughenballzen","category":2,"imgFolder":"/assets/laughballz/","imgCount":10,"price":"1.25","manufacturer":"Kirlan"},
+	{"id":4,"name":"Trollerz","category":3,"imgFolder":"/assets/trolls/","imgCount":4,"price":"6.28","manufacturer":"Dilto"},
+	{"id":7,"name":"Laughenballzen","category":2,"imgFolder":"/assets/laughballz/","imgCount":7,"price":"19.70","manufacturer":"Zapunko"},
+	{"id":5,"name":"Filpon 1","category":1,"imgFolder":"/assets/filpo1/","imgCount":1,"price":"6.54","manufacturer":"Zapunko"},
+	{"id":11,"name":"Laughenballzen","category":2,"imgFolder":"/assets/laughballz/","imgCount":3,"price":"6.14","manufacturer":"Zapunko"},
+	{"id":12,"name":"Trollerz","category":3,"imgFolder":"/assets/trolls/","imgCount":2,"price":"0.12","manufacturer":"Dilto"},
+	{"id":9,"name":"Filpon 1","category":1,"imgFolder":"/assets/filpo1/","imgCount":1,"price":"5.97","manufacturer":"Dilto"},
+	{"id":8,"name":"Trollerz","category":3,"imgFolder":"/assets/trolls/","imgCount":6,"price":"5.11","manufacturer":"Kirlan"},
+	{"id":10,"name":"Filpon 2","category":1,"imgFolder":"/assets/filpo2/","imgCount":2,"price":"14.58","manufacturer":"Zapunko"}
+]

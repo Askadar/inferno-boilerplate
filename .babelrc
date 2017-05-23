@@ -6,5 +6,9 @@
             ]
         }
     },
-    "plugins": ["babel-plugin-syntax-jsx", ["babel-plugin-inferno", {"imports": true}]]
+    "plugins": [
+		"babel-plugin-syntax-jsx",
+		"transform-object-rest-spread",
+		["babel-plugin-inferno", {"imports": true}]
+	]
 }
