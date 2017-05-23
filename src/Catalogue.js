@@ -53,8 +53,8 @@ export default class Catalogue extends Component {
 		const { category, itemId } = this.props.params;
 		const activeFilter = item =>
 			((category && (category === 'all' || item.category === +category)) || !category)
-			&& ((from && (from <= item.price && ((to && from <= to) || !to))) || !from)
-			&& ((to && (to >= item.price && ((from && from <= to) || !from))) || !to)
+			&& ((from && (from <= item.price)) || !from)
+			&& ((to && (to >= item.price)) || !to)
 			&& ((selectedManufacturers && selectedManufacturers[item.manufacturer]) || !selectedManufacturers);
 		return (
 			<div className="catalogue">
@@ -62,11 +62,11 @@ export default class Catalogue extends Component {
 				<div className="filter">
 					<h3>Filters</h3>
 					<p>
-						<label>Price from [{minPrice}]: <input type="number" min={minPrice} max={maxPrice} name="from" onChange={this.priceFilter.bind(this)}/>
+						<label>Price from [{minPrice}]: <input type="number" min={minPrice} max={Math.min(maxPrice, to)} name="from" onChange={this.priceFilter.bind(this)}/>
 						</label>
 					</p>
 					<p>
-						<label>Price to [{maxPrice}]: <input type="number" min={minPrice} max={maxPrice} name="to" onChange={this.priceFilter.bind(this)}/></label>
+						<label>Price to [{maxPrice}]: <input type="number" min={Math.max(minPrice, from)} max={maxPrice} name="to" onChange={this.priceFilter.bind(this)}/></label>
 					</p>
 					<ul style={{ listStyle: 'none', paddingLeft: 0 }}>
 						<li>Selected manufacturers:</li>
